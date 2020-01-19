@@ -27,24 +27,24 @@ public interface Calculator {
         int changeFrequency = changesInYear.get(incFrequency);
         for (int i=1; i<=years; i++) {
             float incrementAmount = 0;
-                incrementAmount = currentSalary * incPercentage/100;                               
-          
+                incrementAmount = (currentSalary * incPercentage/100)*changeFrequency;   
             calcs.add(new CalculatorObject(i, currentSalary, changeFrequency, incPercentage, incrementAmount));
             currentSalary += incrementAmount;
          }
         return calcs;
     }
 
-    static List<CalculatorObject> calculateDeduction(int years, List<IncrementObject> increments, int changeFrequency, float changeAmount) {
+   // static List<CalculatorObject> calculateDeduction(int years, List<IncrementObject> increments, int changeFrequency, float deductionAmount) {
+    static List<CalculatorObject> calculateDeduction(int years, List<IncrementObject> increments, int changeFrequency, float deductionAmount) {
         List<CalculatorObject> calcs = new ArrayList<>();
         int frequency = changesInYear.get(changeFrequency);
+       // float currentSalary = startingSal;
         for (int i=1; i<=years; i++) {
-        	 int deductionPercentage = 0;
-            float startSal = increments.get(i-1).getStartingSal();   
-            int deductionAmount = 0;
-            deductionPercentage += (changeAmount * 100 / startSal);
-            deductionAmount += changeAmount;
-            calcs.add(new CalculatorObject(i, startSal, frequency, deductionPercentage, deductionAmount));
+        	 int deductionPercentage = 0;     
+        	 float netSal = increments.get(i-1).getStartingSal(); 
+            deductionPercentage += (((deductionAmount*frequency/netSal)*100));
+            calcs.add(new CalculatorObject(i, netSal, frequency, deductionPercentage, deductionAmount));           
+            netSal-=deductionAmount;
         }
         return calcs;
     }

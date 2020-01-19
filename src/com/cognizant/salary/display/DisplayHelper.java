@@ -59,7 +59,7 @@ public class DisplayHelper {
     RowFormatter rowFormatter = (rName, rColNames, rRows) -> {
         System.out.println(rName);
         rColNames.forEach(name -> System.out.format("%25s", name));
-        rColNames.forEach(name -> System.out.format("%25s", "-"));
+  //      rColNames.forEach(name -> System.out.format("%25s", "-"));
         System.out.println();
         if(!("c. Prediction Report".equalsIgnoreCase(rName))) {
         rRows.forEach(row -> {
