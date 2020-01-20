@@ -10,7 +10,7 @@ public class Row {
 	private float startingSal;
 	private float incrementAmount;
 	private float deductionAmount;
-	private float salaryGrowth;
+	private int salaryGrowth;
 
     public Row() {
     }
@@ -23,7 +23,7 @@ public class Row {
         this.column5 = column5;
     }
 
-    public Row(int year, float startingSal, float incrementAmount, float deductionAmount, float salaryGrowth) {
+    public Row(int year, float startingSal, float incrementAmount, float deductionAmount, int salaryGrowth) {
     	 this.year = year;
          this.startingSal = startingSal;
          this.incrementAmount = incrementAmount;
@@ -63,11 +63,11 @@ public class Row {
 		this.deductionAmount = deductionAmount;
 	}
 
-	public float getSalaryGrowth() {
+	public int getSalaryGrowth() {
 		return salaryGrowth;
 	}
 
-	public void setSalaryGrowth(float salaryGrowth) {
+	public void setSalaryGrowth(int salaryGrowth) {
 		this.salaryGrowth = salaryGrowth;
 	}
 

@@ -5,12 +5,12 @@ public class PredictionObject {
     float startingSal;
     float incrementAmount;
     float deductionAmount;
-    float salaryGrowth;
+    int salaryGrowth;
 
     public PredictionObject() {
     }
 
-    public PredictionObject(int year, float startingSal, float incrementAmount, float deductionAmount, float salaryGrowth) {
+    public PredictionObject(int year, float startingSal, float incrementAmount, float deductionAmount, int salaryGrowth) {
         this.year = year;
         this.startingSal = startingSal;
         this.incrementAmount = incrementAmount;
@@ -50,11 +50,11 @@ public class PredictionObject {
         this.deductionAmount = deductionAmount;
     }
 
-    public float getSalaryGrowth() {
+    public int getSalaryGrowth() {
         return salaryGrowth;
     }
 
-    public void setSalaryGrowth(float salaryGrowth) {
+    public void setSalaryGrowth(int salaryGrowth) {
         this.salaryGrowth = salaryGrowth;
     }
 

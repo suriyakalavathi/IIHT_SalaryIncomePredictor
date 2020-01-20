@@ -78,7 +78,7 @@ public class DisplayHelper {
                 System.out.format("%25.2f", row.getStartingSal());
                 System.out.format("%25.2f", row.getIncrementAmount());
                 System.out.format("%25.2f", row.getDeductionAmount());
-                System.out.format("%25.2f\n", row.getSalaryGrowth());
+                System.out.format("%25d\n", row.getSalaryGrowth());
                 System.out.println();
             });
             System.out.println();

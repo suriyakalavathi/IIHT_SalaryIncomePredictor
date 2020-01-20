@@ -39,10 +39,10 @@ public interface Calculator {
         List<CalculatorObject> calcs = new ArrayList<>();
         int frequency = changesInYear.get(changeFrequency);
        // float currentSalary = startingSal;
-        for (int i=1; i<=years; i++) {
-        	 int deductionPercentage = 0;     
+        int deductionPercentage = 0;   
+        for (int i=1; i<=years; i++) {        	   
         	 float netSal = increments.get(i-1).getStartingSal(); 
-            deductionPercentage += (((deductionAmount*frequency/netSal)*100));
+            deductionPercentage = (int) ((deductionAmount*frequency/netSal)*100);
             calcs.add(new CalculatorObject(i, netSal, frequency, deductionPercentage, deductionAmount));           
             netSal-=deductionAmount;
         }

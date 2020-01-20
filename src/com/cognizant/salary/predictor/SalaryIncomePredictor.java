@@ -56,11 +56,11 @@ public class SalaryIncomePredictor {
 		PredictionCalculator predictionCalculator = (incs, deducts) -> {
 			List<PredictionObject> salPredictions = new ArrayList<>();
 			for (int i = 1; i <= incs.size(); i++) {
-				float yearlySal = incs.get(i - 1).getStartingSal();
+				float yearlyStartingSal = incs.get(i - 1).getStartingSal();
 				float incAmount = incs.get(i - 1).getIncrementAmount();
 				float dedAmount = deducts.get(i - 1).getDeductionAmount();
-				salPredictions.add(new PredictionObject(i, yearlySal, incAmount, dedAmount,
-						PredictionCalculator.generateSalaryGrowth(yearlySal, incAmount, dedAmount)));
+				salPredictions.add(new PredictionObject(i, yearlyStartingSal, incAmount, dedAmount,
+						PredictionCalculator.generateSalaryGrowth(yearlyStartingSal, incAmount, dedAmount)));
 			}
 			return salPredictions;
 		};
